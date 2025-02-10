@@ -26,17 +26,22 @@
       width: 100px;
       height: 100px;
       background: red;
-      clip-path: polygon(50% 0%, 100% 35%, 85% 100%, 50% 85%, 15% 100%, 0% 35%);
+      clip-path: path(
+        "M 50 15 
+         C 20 -10, -10 20, 50 85 
+         C 110 20, 80 -10, 50 15 Z"
+      );
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
       cursor: pointer;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .heart:hover {
       transform: scale(1.1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 
     .heart:before {
@@ -45,13 +50,17 @@
       width: 90%;
       height: 90%;
       background: pink;
-      clip-path: polygon(50% 0%, 100% 35%, 85% 100%, 50% 85%, 15% 100%, 0% 35%);
+      clip-path: path(
+        "M 50 15 
+         C 20 -10, -10 20, 50 85 
+         C 110 20, 80 -10, 50 15 Z"
+      );
     }
 
     .heart span {
       position: relative;
       color: white;
-      font-size: 12px;
+      font-size: 14px;
       font-weight: bold;
       z-index: 1;
     }
@@ -61,6 +70,8 @@
       margin-top: 20px;
       font-size: 16px;
       font-weight: bold;
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
   </style>
 </head>
