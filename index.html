@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Hearts</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f09ccd;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      flex-direction: column;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .heart {
+      width: 100px;
+      height: 100px;
+      background: red;
+      clip-path: polygon(50% 0%, 100% 35%, 85% 100%, 50% 85%, 15% 100%, 0% 35%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .heart:hover {
+      transform: scale(1.1);
+    }
+
+    .heart:before {
+      content: '';
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      background: pink;
+      clip-path: polygon(50% 0%, 100% 35%, 85% 100%, 50% 85%, 15% 100%, 0% 35%);
+    }
+
+    .heart span {
+      position: relative;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      z-index: 1;
+    }
+
+    .caption {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="heart" onclick="showMessage('You clicked on Heart 1!')"><span>1</span></div>
+    <div class="heart" onclick="showMessage('You clicked on Heart 2!')"><span>2</span></div>
+    <div class="heart" onclick="showMessage('You clicked on Heart 3!')"><span>3</span></div>
+    <div class="heart" onclick="showMessage('You clicked on Heart 4!')"><span>4</span></div>
+    <div class="heart" onclick="showMessage('You clicked on Heart 5!')"><span>5</span></div>
+    <div class="heart" onclick="showMessage('You clicked on Heart 6!')"><span>6</span></div>
+    <div class="heart" onclick="showMessage('You clicked on Heart 7!')"><span>7</span></div>
+    <div class="heart" onclick="showMessage('You clicked on Heart 8!')"><span>8</span></div>
+    <div class="heart" onclick="showMessage('You clicked on Heart 9!')"><span>9</span></div>
+  </div>
+  <div class="caption">Limited Time</div>
+
+  <script>
+    function showMessage(message) {
+      alert(message);
+    }
+  </script>
+</body>
+</html>
